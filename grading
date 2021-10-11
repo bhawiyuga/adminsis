@@ -2,7 +2,9 @@
 
 echo "Grading Script Running"
 
-OUTPUT_FILE=./exam
+mkdir -p /exam
+
+OUTPUT_FILE=/exam/myexam.txt
 
 echo "1. hostname" >> $OUTPUT_FILE
 hostname > $OUTPUT_FILE
