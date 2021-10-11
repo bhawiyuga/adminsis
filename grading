@@ -1,0 +1,24 @@
+#/bin/bash
+
+echo "Grading Script Running"
+
+OUTPUT_FILE=./exam
+
+echo "1. hostname" >> $OUTPUT_FILE
+hostname > $OUTPUT_FILE
+echo >> $OUTPUT_FILE
+
+echo "2. fstab" >> $OUTPUT_FILE
+cat /etc/fstab | grep -v ^\# >> $OUTPUT_FILE
+echo >> $OUTPUT_FILE
+
+echo "3. lsblk" >> $OUTPUT_FILE
+lsblk -fp >> $OUTPUT_FILE
+echo >> $OUTPUT_FILE
+
+echo "4. html" >> $OUTPUT_FILE
+tree -pu /var/www/html/ >> $OUTPUT_FILE
+echo >> $OUTPUT_FILE
+
+echo "5. swap" >> $OUTPUT_FILE
+swapon >> $OUTPUT_FILE
