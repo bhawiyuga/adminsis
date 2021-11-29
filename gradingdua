@@ -29,6 +29,6 @@ getfacl /myserver >> $OUTPUT_FILE
 echo >> $OUTPUT_FILE
 
 echo "5. container" >> $OUTPUT_FILE
-docker ps >> $OUTPUT_FILE
+podman ps >> $OUTPUT_FILE
 echo >> $OUTPUT_FILE
 curl localhost:8080 >> $OUTPUT_FILE
