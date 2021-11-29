@@ -1,0 +1,34 @@
+#/bin/bash
+
+echo "Grading Script Kuis Dua Running"
+
+OUTPUT_FILE=~/myexamdua.txt
+
+echo "1. hostname" >> $OUTPUT_FILE
+hostname > $OUTPUT_FILE
+echo >> $OUTPUT_FILE
+
+echo "2. fstab" >> $OUTPUT_FILE
+cat /etc/fstab | grep -v ^\# >> $OUTPUT_FILE
+echo >> $OUTPUT_FILE
+
+echo "- lvdisplay" >> $OUTPUT_FILE
+lvdisplay >> $OUTPUT_FILE
+echo >> $OUTPUT_FILE
+
+echo "3. web" >> $OUTPUT_FILE
+curl localhost:80 >> $OUTPUT_FILE
+echo >> $OUTPUT_FILE
+
+echo "- web dir" >> $OUTPUT_FILE
+ls -la /server >> $OUTPUT_FILE
+echo >> $OUTPUT_FILE
+
+echo "4. access control" >> $OUTPUT_FILE
+getfacl /myserver >> $OUTPUT_FILE
+echo >> $OUTPUT_FILE
+
+echo "5. container" >> $OUTPUT_FILE
+docker ps >> $OUTPUT_FILE
+echo >> $OUTPUT_FILE
+curl localhost:8080 >> $OUTPUT_FILE
